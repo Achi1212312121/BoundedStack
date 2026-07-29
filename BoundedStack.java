@@ -35,13 +35,7 @@ public class BoundedStack {
         this.size = 0;
         checkRep();
    }
-    public boolean Maxcapacity(){
-    return size == weight.length;
-     }
-
-     public boolean Nullcapacity(){
-        return size == 0;
-     }
+   
    /*
     *Mutator
      */
@@ -74,5 +68,33 @@ public class BoundedStack {
     return removeweight;
    }
 
+   /*
+   //Observer
+   */
+ 
+
    
+ /*
+   //เช็ดว่าข้อมูลเต็มรึยัง
+   @return true ถ้าจำนวนข้อมูลเต็ม,false ถ้าข้อมูลเหลือ
+ */
+   public boolean Maxcapacity(){
+    return size == weight.length;
+     }
+
+     /*
+     //เช็ดว่าข้อมูลว่างไหม
+     //@return trunถ้าไม่มีข้อมูล,false ถ้ามีข้อมูลเหลือ
+     */
+     public boolean Nullcapacity(){
+        return size == 0;
+     }
+/*
+    //ดูจำนวนกล่องที่มีอยู่ตอนนี้
+    //@return จำนวนกล่องที่มี
+*/
+     public int getSize(){
+        return size;
+     }
+
 }
