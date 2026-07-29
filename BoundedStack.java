@@ -28,12 +28,51 @@ public class BoundedStack {
 
    //Creator
    /*
-    *กำหนดความจุของขนาดชั้นวาง
+    //กำหนดความจุของขนาดชั้นวาง
    */
    public BoundedStack(int capacity){
         this.weight = new int[capacity];
         this.size = 0;
         checkRep();
    }
+    public boolean Maxcapacity(){
+    return size == weight.length;
+     }
 
+     public boolean Nullcapacity(){
+        return size == 0;
+     }
+   /*
+    *Mutator
+     */
+    
+    /*
+     //วางกล่อง
+     //@param kg ของกล่อง น้ำหนักต้องมากกว่า0และชั้นวางต้องไม่เต็ม
+     //@throws IllegalArgumentException ถ้าน้ำหนักน้อยกว่า0 หรือ ชั้นวางเต็ม
+    */
+    
+    public void push(int kg){
+        if (kg<=0) throw new IllegalArgumentException("น้ำหนักต้องมากกว่า0");
+        if (Maxcapacity())throw new IllegalArgumentException("ชั้นเต็มแล้ว");
+        weight[size]=kg;
+        size++;
+        checkRep();
+   }
+
+   /*
+     //ยกกล่อง
+     //@return ดึงกล่องออกไป   
+     //@throws IllegalArgumentException
+   */
+   public int pop(){
+    if (Nullcapacity()) throw new IllegalArgumentException("ไม่มีกล่องให้เอาออก");
+    size--;
+    int removeweight = weight[size];
+    weight[size] = 0;
+    checkRep();
+    return removeweight;
+   }
+
+   
 }
