@@ -59,7 +59,7 @@ public class Testrunner {
         BoundedStack box = new BoundedStack(3);//สร้างความจุของจำนวนกล่อง(มีค่า3)
         check("new() -> size is 0", box.getSize() == 0);//เช็กว่ามีจำนวนกล่องเท่ากับ 0 จริงไหม
         box.push(10);//วางกล่องที่น้ำหนัก10ลง
-        check("new() -> size is 3", box.getSize() == 1);//เช็กว่ามีจำนวนกล่องเท่ากับ 1 จริงไหม
+        check("new() -> size is 1", box.getSize() == 1);//เช็กว่ามีจำนวนกล่องเท่ากับ 1 จริงไหม
         check("stack is not null is now", box.Nullcapacity() == false);//เช็กว่าไม่มีกล่องอยู่จริงไหม เพราะตอนนี้มีการวางกล่องลงไปแล้ว
         box.push(20);//วางกล่องที่น้ำหนัก20ลง
         box.push(30);//วางกล่องที่น้ำหนัก30ลง
