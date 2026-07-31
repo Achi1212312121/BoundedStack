@@ -43,11 +43,9 @@ public class BoundedStack {
         assert weight != null : "weight is not null";//ตรวจสอบว่าตัวแปร weight ไม่เป็น null
         assert size <= weight.length && size >= 0 : "Invalid size: " + size;//ตรวจสอบว่าตัวแปร size มีค่าถูกต้อง
         for (int i = 0; i < size; i++) {
-            if (weight[i] <= 0) {
-                assert weight[i] >= 0 : "weight must be more than 0";//ตรวจสอบว่าตัวแปร weight มีค่ามากกว่า 0
+            assert weight[i] > 0 : "weight at index " + i + " must be greater than 0";//ตรวจสอบว่าตัวแปร weight ทุกตัวมีค่ามากกว่า 0
             }
         }
-    }
 
     /*
      * //Creator
